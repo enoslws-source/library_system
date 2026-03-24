@@ -67,7 +67,7 @@ public class Book {
         return genre;
     }
 
-    public void setAvailableCopies(int avilableCopies) {
+    public void setAvailableCopies(int availableCopies) {
         this.availableCopies = availableCopies;
     }
 

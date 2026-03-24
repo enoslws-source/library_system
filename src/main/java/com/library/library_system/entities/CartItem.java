@@ -23,7 +23,7 @@ public class CartItem {
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "cart")
+    @JoinColumn(name = "cart_id") // cart item is the child since it belongs to cart
     private Cart cart;
 
     @Enumerated(EnumType.STRING)
@@ -57,6 +57,14 @@ public class CartItem {
 
     public Book getBook() {
         return book;
+    }
+
+    public void setStatus(CheckedOutStatus status){
+        this.status = status;
+    }
+
+    public CheckedOutStatus getStatus(){
+        return status;
     }
 }
 

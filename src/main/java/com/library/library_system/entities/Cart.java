@@ -3,12 +3,23 @@ package com.library.library_system.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.*;
+
+@Entity
+
 public class Cart {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "id")
     private long id;
 
+    @OneToMany(mappedBy = "cart") // cart is the parent in the cart item relationship
     Set<CartItem> cartItem = new HashSet<>();
 
+    @OneToOne
+    @JoinColumn(name = "customer_id")
     Customer customer;
 
     public Cart(){

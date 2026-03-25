@@ -22,6 +22,12 @@ public class Cart {
     @JoinColumn(name = "customer_id")
     Customer customer;
 
+    @Column(name = "order_tracking_number")
+    String orderTrackingNumber;
+
+    @Column(name = "status")
+    Status status;
+
     public Cart(){
 
     }
@@ -43,5 +49,17 @@ public class Cart {
     }
     public Customer getCustomer(){
         return customer;
+    }
+    public void setOrderTrackingNumber(String orderTrackingNumber){
+        this.orderTrackingNumber = orderTrackingNumber;
+    }
+    public String getOrderTrackingNumber(){
+        return orderTrackingNumber;
+    }
+    public void setStatus(Status status){
+        this.status = status;
+    }
+    public Status getStatus(){
+        return status;
     }
 }

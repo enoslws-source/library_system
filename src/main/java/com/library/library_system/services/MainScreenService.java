@@ -6,7 +6,7 @@ import java.util.List;
 public interface MainScreenService {
 
     public List<Book> findAll();
-  //  public Book findById(int theId);
+    public Book findById(long theId);
  //   public void save (Book theBook);
  //   public void deleteById(int theId);
 }

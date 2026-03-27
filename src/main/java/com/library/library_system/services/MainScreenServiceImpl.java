@@ -13,15 +13,22 @@ public class MainScreenServiceImpl implements MainScreenService {
 
     private BookRepository bookRepository;
 
-    @Autowired
+    @Autowired // this is like showing up to work and having your boss hand you the tools necessary to do the job
+    // this is contructor injection , instead of creating a book object in the class, spring creates and passes it for me
     public MainScreenServiceImpl(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
-    @Override
+    @Override // this says i am fulfilling the contract from MAinscreenService inteface. It will also correct if its spelled wrong
     public List<Book> findAll() {
-        return (List<Book>) bookRepository.findAll();
+        return bookRepository.findAll();
     }
 
+    @Override
+    public Book findById(long id){
+        Optional<Book> optionalBook = bookRepository.findById(id); // gets the book from the database based on the id
+        Book book = optionalBook.orElse(null); // checks if it is there, if it isn't then returns null
+        return book; // returns the book
+    }
 }
 

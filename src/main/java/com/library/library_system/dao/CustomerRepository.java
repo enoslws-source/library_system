@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("http://localhost:4201/")
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 }

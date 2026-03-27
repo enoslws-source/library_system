@@ -1,0 +1,26 @@
+
+<header id="intro" style="display: block;">
+    <div class="hgroup">
+        <h1>Library</h1>
+    </div>
+</header>
+
+
+<h3> Book Detail </h3>
+
+<table border="2">
+    <tr>
+        @for (book of book; track book.id) {
+
+            <th><img [src] = "book.image_url" width = "150" />
+
+
+
+                <div>{{ book.title }}</div>
+                <div>{{ book.author }}</div>
+            </th>
+        }
+    </tr>
+
+</table>
+

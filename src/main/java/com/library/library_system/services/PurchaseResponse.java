@@ -9,7 +9,8 @@ public class PurchaseResponse {
 
     private String orderTrackingNumber;
 
-    public PurchaseResponse(){
+    public PurchaseResponse(String orderTrackingNumber){
+        this.orderTrackingNumber = orderTrackingNumber;
     }
 
     public void setOrderTrackingNumber(String orderTrackingNumber){

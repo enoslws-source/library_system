@@ -3,6 +3,9 @@ import com.library.library_system.entities.Customer;
 import com.library.library_system.entities.Cart;
 import com.library.library_system.entities.CartItem;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +18,7 @@ public class PurchaseData {
 
     private Customer customer;
     private Cart cart;
-    private CartItem cartItem;
+    private Set<CartItem> cartItems = new HashSet<>();
 
 
 
@@ -35,10 +38,10 @@ public class PurchaseData {
     public Cart getCart(){
         return cart;
     }
-    public void setCartItem(CartItem cartItem){
-    this.cartItem = cartItem;
+    public void setCartItems(Set<CartItem> cartItems){
+    this.cartItems = cartItems;
     }
-    public CartItem getCartItem(){
-        return cartItem;
+    public Set<CartItem> getCartItems(){
+        return cartItems;
     }
 }
